@@ -1,0 +1,42 @@
+.wrapper {
+    height: calc(100vh - 14rem - 8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball {
+    background-color: black;
+    color: white;
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    font-size: 3rem;
+}
+
+.eight {
+    margin-top: 13rem;
+    display: inline-block;
+}
+
+@media screen and (min-width: 425px) {
+    .ball {
+        height: 38rem;
+        width: 38rem;
+    }
+
+    .eight {
+        margin-top: 17rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .ball {
+        height: 50rem;
+        width: 50rem;
+    }
+
+    .eight {
+        margin-top: 23rem;
+    }
+}
