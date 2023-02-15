@@ -13,11 +13,21 @@
     border-radius: 50%;
     font-size: 3rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .eight {
-    margin-top: 13rem;
     display: inline-block;
+    height: 25%;
+    width: 25%;
+    background: white;
+    border-radius: 50%;
+    color: black;
+    font-size: 6rem;
+    padding: 2rem;
+    line-height: 7.5rem;
 }
 
 @media screen and (min-width: 425px) {
@@ -27,7 +37,8 @@
     }
 
     .eight {
-        margin-top: 17rem;
+        font-size: 7rem;
+        line-height: 9rem;
     }
 }
 
@@ -38,6 +49,11 @@
     }
 
     .eight {
-        margin-top: 23rem;
+        line-height: 12rem;
     }
+}
+
+.answer {
+    color: white;
+    max-width: 80%;
 }
