@@ -1,6 +1,24 @@
 .logo {
-    font-size: 4rem;
+    font-family: 'Henny Penny', cursive;
+    font-size: 7rem;
     height: 8rem;
-    padding: 4rem 1rem 2rem 1rem;
-    line-height: 8rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    height: 22vh;
+    line-height: 10rem;
+}
+
+@media screen and (min-width: 467px) {
+    .logo {
+        margin: 3rem auto;
+        height: 10vh;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .logo {
+        margin: 4.5rem auto;
+        height: 12vh;
+        font-size: 10rem;
+    }
 }
