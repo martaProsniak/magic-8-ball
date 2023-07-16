@@ -20,9 +20,9 @@
 }
 
 .ball {
-    background: radial-gradient(circle closest-corner at center 125px,
-            #222,
-            black 40%) no-repeat;
+    background: radial-gradient(circle at 65% 15%, rgb(141, 141, 141) 1px, rgb(83, 83, 83) 3%, rgb(41, 41, 41) 60%, rgb(83,
+                83,
+                83) 100%);
     color: white;
     height: 32rem;
     width: 32rem;
@@ -48,6 +48,30 @@
     line-height: 8.5rem;
 }
 
+.answer-wrap {
+    filter: drop-shadow(0 0 1rem rgb(68, 63, 224));
+}
+
+.answer {
+    color: white;
+    max-width: 80%;
+    font-family: 'Tektur', cursive;
+    background-color: #271FE4;
+    padding: 2rem;
+    width: 12rem;
+    height: 10rem;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    font-size: 1.5rem;
+    border-radius: .5rem;
+
+}
+
+.answer div {
+    width: 8ch;
+    height: 10rem;
+    margin: auto;
+}
+
 @media screen and (min-width: 467px) {
     .wrapper {
         height: 82vh;
@@ -67,6 +91,12 @@
         font-size: 7rem;
         line-height: 10rem;
     }
+
+    .answer {
+        font-size: 1.8rem;
+        width: 17rem;
+        height: 13rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -83,9 +113,10 @@
     .eight {
         line-height: 12rem;
     }
-}
 
-.answer {
-    color: white;
-    max-width: 80%;
+    .answer {
+        font-size: 2rem;
+        width: 17rem;
+        height: 13rem;
+    }
 }

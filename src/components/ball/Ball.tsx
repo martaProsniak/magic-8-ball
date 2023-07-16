@@ -20,7 +20,7 @@ const Ball: FC = () => {
         <div className="instruction">{instructionText}</div>
         <div className="ball" onClick={handleClick}>
             {!answer && <span className="eight">8</span>}
-            {answer && <span className="answer">{answer}</span>}
+            {answer && <div className="answer-wrap"><div className="answer"><div>{answer}</div></div></div>}
         </div>
         <div className="btn-wrapper">{answer && <Button text={"Change question"} onClick={() => setAnswer('')} />}</div>
     </div>)
