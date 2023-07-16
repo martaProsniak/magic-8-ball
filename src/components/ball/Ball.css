@@ -33,6 +33,9 @@
     justify-content: center;
     align-items: center;
     -webkit-tap-highlight-color: transparent;
+    -webkit-box-shadow: 0px 0px 55px 0px rgba(129, 61, 218, 0.66);
+    -moz-box-shadow: 0px 0px 55px 0px rgba(129, 61, 218, 0.66);
+    box-shadow: 0px 0px 55px 0px rgba(129, 61, 218, 0.66);
 }
 
 .eight {
@@ -49,14 +52,14 @@
 }
 
 .answer-wrap {
-    filter: drop-shadow(0 0 1rem rgb(68, 63, 224));
+    filter: drop-shadow(0 0 1rem rgba(129, 61, 218, 0.66));
 }
 
 .answer {
     color: white;
     max-width: 80%;
     font-family: 'Tektur', cursive;
-    background-color: #271FE4;
+    background-color: rgba(129, 61, 218, 0.66);
     padding: 2rem;
     width: 12rem;
     height: 10rem;
@@ -64,6 +67,12 @@
     font-size: 1.5rem;
     border-radius: .5rem;
 
+}
+
+.answer-border {
+    border: 5px #383838a1 solid;
+    padding: 5rem 4rem;
+    border-radius: 50%;
 }
 
 .answer div {
@@ -87,6 +96,10 @@
         width: 40rem;
     }
 
+    .answer-border {
+        padding: 7rem 5rem;
+    }
+
     .eight {
         font-size: 7rem;
         line-height: 10rem;
@@ -103,6 +116,7 @@
     .instruction {
         margin-top: 3rem;
         height: 3rem;
+        font-size: 2.2rem;
     }
 
     .ball {
@@ -118,5 +132,9 @@
         font-size: 2rem;
         width: 17rem;
         height: 13rem;
+    }
+
+    .answer-border {
+        padding: 8rem 6rem;
     }
 }
