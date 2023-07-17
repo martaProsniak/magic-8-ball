@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import './Ball.css'
 import data from './answers.json'
-import Button from '../Button/Button'
 
 const Ball: FC = () => {
     const [answer, setAnswer] = useState('')
@@ -14,15 +13,16 @@ const Ball: FC = () => {
         return Math.floor(Math.random() * max)
     }
 
-    const instructionText = !answer ? 'Think of a question and click the ball to get the answer' : 'Don\'t like the answer? Click the ball to ask again'
+    const instructionText = !answer ? 'Think of a question and tap the ball to get the answer' : 'Don\'t like the answer? Click the ball to ask again'
 
-    return (<div className="wrapper">
+    return (<div className="wrapper" >
         <div className="instruction">{instructionText}</div>
+        <div className="backdrop" onClick={() => setAnswer('')}></div>
         <div className="ball" onClick={handleClick}>
             {!answer && <span className="eight">8</span>}
             {answer && <div className="answer-border"><div className="answer-wrap"><div className="answer"><div>{answer}</div></div></div></div>}
         </div>
-        <div className="btn-wrapper">{answer && <Button text={"Change question"} onClick={() => setAnswer('')} />}</div>
+        <div className="reset-instruction">{answer && "Tap outside the ball to ask another question"}</div>
     </div>)
 }
 
