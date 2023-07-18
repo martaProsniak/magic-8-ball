@@ -15,9 +15,15 @@
 
 .reset-instruction {
     width: 100%;
-    height: 4rem;
     font-size: 1.6rem;
     padding: 1rem 3rem;
+    height: 4.4rem;
+}
+
+@media screen and (min-width: 375px) {
+    .reset-instruction {
+        height: 2.4rem;
+    }
 }
 
 .ball {
@@ -107,10 +113,6 @@
 }
 
 @media screen and (min-width: 425px) {
-    .wrapper {
-        height: 82vh;
-    }
-
     .instruction {
         height: 5rem;
     }
@@ -135,16 +137,15 @@
 @media screen and (min-width: 768px) {
     .instruction {
         height: 3rem;
-        font-size: 2.2rem;
     }
 
     .ball {
-        height: 47rem;
-        width: 47rem;
+        height: 45rem;
+        width: 45rem;
     }
 
     .eight {
-        line-height: 12rem;
+        line-height: 11.5rem;
     }
 
     .answer {
