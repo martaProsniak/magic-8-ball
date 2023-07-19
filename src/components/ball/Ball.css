@@ -1,5 +1,5 @@
 .wrapper {
-    height: 74vh;
+    height: calc(100vh - 180px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -120,6 +120,10 @@
 }
 
 @media screen and (min-width: 425px) {
+    .wrapper {
+        height: calc(100vh - 200px);
+    }
+
     .instruction {
         height: 5rem;
     }
@@ -142,6 +146,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .wrapper {
+        height: calc(100vh - 210px);
+    }
+
     .instruction {
         height: 3rem;
     }
