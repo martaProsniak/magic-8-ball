@@ -8,8 +8,8 @@ body {
 }
 
 :root {
-  --bgColor: #242424;
-  --textColor: #EDEDED;
+  --dark: #242424;
+  --light: #EDEDED;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,8 +17,8 @@ body {
   font-size: 10px;
 
   color-scheme: light dark;
-  color: var(--textColor);
-  background-color: var(--bgColor);
+  color: var(--light);
+  background-color: var(--dark);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,12 +29,8 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--bgColor);
-    background-color: var(--textColor);
-  }
-
-  a:hover {
-    color: #747bff;
+    color: var(--dark);
+    background-color: var(--light);
   }
 
   button {
