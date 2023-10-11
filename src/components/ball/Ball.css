@@ -27,13 +27,19 @@
 }
 
 .ball {
+    --extraSmall: 28rem;
+    --small: 32rem;
+    --medium: 38rem;
+    --big: 45rem;
+
+
     position: relative;
     background: radial-gradient(circle at 65% 15%, rgb(141, 141, 141) 1px, rgb(83, 83, 83) 3%, rgb(41, 41, 41) 60%, rgb(83,
                 83,
                 83) 100%);
     color: white;
-    height: 28rem;
-    width: 28rem;
+    height: var(--extraSmall);
+    width: var(--extraSmall);
     border-radius: 50%;
     font-size: 3rem;
     cursor: pointer;
@@ -119,7 +125,7 @@
     height: 10rem;
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: var()) {
     .wrapper {
         height: calc(100vh - 200px);
     }
@@ -129,8 +135,8 @@
     }
 
     .ball {
-        height: 32rem;
-        width: 32rem;
+        height: var(--small);
+        width: var(--small);
     }
 
     .eight {
@@ -155,8 +161,36 @@
     }
 
     .ball {
-        height: 45rem;
-        width: 45rem;
+        height: var(--medium);
+        width: var(--medium);
+    }
+
+    .eight {
+        line-height: 10.5rem;
+    }
+
+    .answer {
+        width: 17rem;
+        height: 13rem;
+    }
+
+    .answer-border {
+        padding: 8rem 6rem;
+    }
+}
+
+@media screen and (min-width: 1440) {
+    .wrapper {
+        height: calc(100vh - 210px);
+    }
+
+    .instruction {
+        height: 3rem;
+    }
+
+    .ball {
+        height: var(--big);
+        width: var(--big);
     }
 
     .eight {
