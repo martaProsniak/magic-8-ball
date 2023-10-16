@@ -21,6 +21,14 @@ const Ball: FC = () => {
         }, 500)
     }
 
+    const onQuestionChange = () => {
+        answerRef.current?.classList.remove('fadeIn');
+        answerRef.current?.classList.add('fadeOut');
+        setTimeout(() => {
+            setAnswer('');
+        }, 500)
+    }
+
     const getRandomNumber = (max: number) => {
         return Math.floor(Math.random() * max)
     }
@@ -29,10 +37,10 @@ const Ball: FC = () => {
 
     return (<div className="wrapper" >
         <div className="instruction">{instructionText}</div>
-        <div className="backdrop" onClick={() => setAnswer('')}></div>
+        <div className="backdrop" onClick={onQuestionChange}></div>
         <div className="ball" ref={ballRef} onClick={handleClick}>
-            {!answer && <div className="eight" ref={eightRef}>8</div>}
-            {answer && <div className="answer-border"><div className="answer-wrap"><div className="answer"><div ref={answerRef}>{answer}</div></div></div></div>}
+            {!answer && <div className="eight fadeIn" ref={eightRef}>8</div>}
+            {answer && <div className="answer-wrap" ref={answerRef}><div className="answer"><div>{answer}</div></div></div>}
         </div>
         <div className="reset-instruction">{answer && "Tap outside the ball to ask another question"}</div>
     </div>)
