@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import './Ball.css'
 import data from './answers.json'
 
@@ -12,27 +12,6 @@ const Ball: FC = () => {
     const getRandomNumber = (max: number) => {
         return Math.floor(Math.random() * max)
     }
-
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
-    const [z, setZ] = useState(0);
-
-    function handleMotionEvent(event: DeviceMotionEvent) {
-        console.log("handle motion event", event);
-
-        const x = event.accelerationIncludingGravity?.x ?? 0;
-        const y = event.accelerationIncludingGravity?.y ?? 0;
-        const z = event.accelerationIncludingGravity?.z ?? 0;
-
-        setX(x);
-        setY(y);
-        setZ(z);
-    }
-
-    useEffect(() => {
-        window.addEventListener("devicemotion", handleMotionEvent, true);
-    }, [x, y, z]);
-
 
     const instructionText = !answer ? 'Think of a question and tap the ball to get the answer' : 'Don\'t like the answer? Tap the ball to ask again'
 
