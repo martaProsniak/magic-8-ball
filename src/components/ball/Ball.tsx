@@ -5,14 +5,19 @@ import data from './answers.json'
 const Ball: FC = () => {
     const [answer, setAnswer] = useState('');
     const ballRef = useRef<HTMLDivElement>(null);
+    const answerRef = useRef<HTMLDivElement>(null);
+    const eightRef = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
-        console.log(ballRef.current)
-        setAnswer("")
+        answerRef.current?.classList.remove('fadeIn');
+        eightRef.current?.classList.add('fadeOut');
+        answerRef.current?.classList.add('fadeOut');
         ballRef.current?.classList.add('ball-shake');
         setTimeout(() => {
             setAnswer(data.answers[getRandomNumber(20)])
             ballRef.current?.classList.remove('ball-shake');
+            answerRef.current?.classList.remove('fadeOut');
+            answerRef.current?.classList.add('fadeIn');
         }, 500)
     }
 
@@ -26,8 +31,8 @@ const Ball: FC = () => {
         <div className="instruction">{instructionText}</div>
         <div className="backdrop" onClick={() => setAnswer('')}></div>
         <div className="ball" ref={ballRef} onClick={handleClick}>
-            {!answer && <span className="eight">8</span>}
-            {answer && <div className="answer-border"><div className="answer-wrap"><div className="answer"><div>{answer}</div></div></div></div>}
+            {!answer && <div className="eight" ref={eightRef}>8</div>}
+            {answer && <div className="answer-border"><div className="answer-wrap"><div className="answer"><div ref={answerRef}>{answer}</div></div></div></div>}
         </div>
         <div className="reset-instruction">{answer && "Tap outside the ball to ask another question"}</div>
     </div>)
