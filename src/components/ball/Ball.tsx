@@ -1,12 +1,19 @@
-import { FC, useState } from "react";
+import { FC, useState, useRef } from "react";
 import './Ball.css'
 import data from './answers.json'
 
 const Ball: FC = () => {
     const [answer, setAnswer] = useState('');
+    const ballRef = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
-        setAnswer(data.answers[getRandomNumber(20)])
+        console.log(ballRef.current)
+        setAnswer("")
+        ballRef.current?.classList.add('ball-shake');
+        setTimeout(() => {
+            setAnswer(data.answers[getRandomNumber(20)])
+            ballRef.current?.classList.remove('ball-shake');
+        }, 500)
     }
 
     const getRandomNumber = (max: number) => {
@@ -18,7 +25,7 @@ const Ball: FC = () => {
     return (<div className="wrapper" >
         <div className="instruction">{instructionText}</div>
         <div className="backdrop" onClick={() => setAnswer('')}></div>
-        <div className="ball" onClick={handleClick}>
+        <div className="ball" ref={ballRef} onClick={handleClick}>
             {!answer && <span className="eight">8</span>}
             {answer && <div className="answer-border"><div className="answer-wrap"><div className="answer"><div>{answer}</div></div></div></div>}
         </div>
