@@ -68,12 +68,12 @@ export default defineConfig({
           {
             src: "screenshot1.png",
             sizes: "586x1041",
-            label: "Magic 8 Ball, legendary fortune teller",
+            label: "Magic 8 Ball, the legendary fortune teller",
           },
           {
             src: "screenshot2.png",
             sizes: "586x1041",
-            label: "Sometimes you;ll have to ask again",
+            label: "Sometimes you'll have to ask again",
           },
         ],
       },
