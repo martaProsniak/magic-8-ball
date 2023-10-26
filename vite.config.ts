@@ -15,28 +15,43 @@ export default defineConfig({
         start_url: "https://8ballwilltellyou.netlify.app/",
         icons: [
           {
-            src: "android/android-launchericon-512-512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "android/android-launchericon-192-192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "android/android-launchericon-96-96.png",
-            sizes: "96x96",
-            type: "image/png",
-          },
-          {
-            src: "android/android-launchericon-72-72.png",
+            src: "/icon-72x72.png",
             sizes: "72x72",
             type: "image/png",
           },
           {
-            src: "android/android-launchericon-48-48.png",
-            sizes: "48x48",
+            src: "/icon-96x96.png",
+            sizes: "96x96",
+            type: "image/png",
+          },
+          {
+            src: "/icon-128x128.png",
+            sizes: "128x128",
+            type: "image/png",
+          },
+          {
+            src: "/icon-144x144.png",
+            sizes: "144x144",
+            type: "image/png",
+          },
+          {
+            src: "/icon-152x152.png",
+            sizes: "152x152",
+            type: "image/png",
+          },
+          {
+            src: "/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icon-384x384.png",
+            sizes: "384x384",
+            type: "image/png",
+          },
+          {
+            src: "/icon-512x512.png",
+            sizes: "512x512",
             type: "image/png",
           },
           {
@@ -47,7 +62,7 @@ export default defineConfig({
           },
           {
             src: "/logo-512x512.png",
-            sizes: "196x196512x512",
+            sizes: "512x512",
             type: "image/png",
             purpose: "any",
           },
@@ -58,7 +73,8 @@ export default defineConfig({
         orientation: "portrait-primary",
         display_override: ["window-controls-overlay", "minimal-ui", "browser"],
         categories: ["entertainment", "lifestyle"],
-        description: "Have a question? Get the answer quick by adding this app to your home screen!",
+        description:
+          "Have a question? Get the answer quick by adding this app to your home screen!",
         screenshots: [
           {
             src: "screenshot1.png",
