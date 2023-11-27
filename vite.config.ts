@@ -5,7 +5,7 @@ import { ManifestOptions, VitePWA } from "vite-plugin-pwa";
 const manifest: Partial<ManifestOptions> = {
   name: "Magic 8 Ball",
   short_name: "Magic 8 Ball",
-  start_url: process.env.NODE_ENV === 'development' ? "http://localhost:5173/" : "https://8ballwilltellyou.netlify.app/",
+  start_url: "https://8ballwilltellyou.netlify.app/",
   icons: [
     {
       src: "/icon-72x72.png",
@@ -82,8 +82,6 @@ const manifest: Partial<ManifestOptions> = {
   ],
 }
 
-console.log('mode', process.env.NODE_ENV)
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -91,9 +89,6 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
-      devOptions: {
-        enabled: true,
-      },
       manifest: manifest,
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
