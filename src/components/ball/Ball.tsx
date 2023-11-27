@@ -2,7 +2,11 @@ import { FC, useState, useRef } from "react";
 import './Ball.css'
 import data from './answers.json'
 
-const Ball: FC = () => {
+interface BallProps {
+    increaseClicks: () => void;
+}
+
+const Ball = ({increaseClicks}: BallProps) => {
     const [answer, setAnswer] = useState('');
     const ballRef = useRef<HTMLDivElement>(null);
     const answerRef = useRef<HTMLDivElement>(null);
@@ -13,6 +17,7 @@ const Ball: FC = () => {
         eightRef.current?.classList.add('fadeOut');
         answerRef.current?.classList.add('fadeOut');
         ballRef.current?.classList.add('ball-shake');
+        increaseClicks();
         setTimeout(() => {
             setAnswer(data.answers[getRandomNumber(20)])
             ballRef.current?.classList.remove('ball-shake');
@@ -22,6 +27,8 @@ const Ball: FC = () => {
     }
 
     const onQuestionChange = () => {
+        if (!answer) return;
+        increaseClicks();
         answerRef.current?.classList.remove('fadeIn');
         answerRef.current?.classList.add('fadeOut');
         setTimeout(() => {

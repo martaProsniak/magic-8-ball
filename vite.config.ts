@@ -1,6 +1,88 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { VitePWA } from "vite-plugin-pwa";
+import { ManifestOptions, VitePWA } from "vite-plugin-pwa";
+
+const manifest: Partial<ManifestOptions> = {
+  name: "Magic 8 Ball",
+  short_name: "Magic 8 Ball",
+  start_url: process.env.NODE_ENV === 'development' ? "http://localhost:5173/" : "https://8ballwilltellyou.netlify.app/",
+  icons: [
+    {
+      src: "/icon-72x72.png",
+      sizes: "72x72",
+      type: "image/png",
+    },
+    {
+      src: "/icon-96x96.png",
+      sizes: "96x96",
+      type: "image/png",
+    },
+    {
+      src: "/icon-128x128.png",
+      sizes: "128x128",
+      type: "image/png",
+    },
+    {
+      src: "/icon-144x144.png",
+      sizes: "144x144",
+      type: "image/png",
+    },
+    {
+      src: "/icon-152x152.png",
+      sizes: "152x152",
+      type: "image/png",
+    },
+    {
+      src: "/icon-192x192.png",
+      sizes: "192x192",
+      type: "image/png",
+    },
+    {
+      src: "/icon-384x384.png",
+      sizes: "384x384",
+      type: "image/png",
+    },
+    {
+      src: "/icon-512x512.png",
+      sizes: "512x512",
+      type: "image/png",
+    },
+    {
+      src: "/maskable_icon_x192.png",
+      sizes: "196x196",
+      type: "image/png",
+      purpose: "maskable",
+    },
+    {
+      src: "/logo-512x512.png",
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "any",
+    },
+  ],
+  theme_color: "#242424",
+  background_color: "#242424",
+  display: "standalone",
+  orientation: "portrait-primary",
+  display_override: ["window-controls-overlay", "minimal-ui", "browser"],
+  categories: ["entertainment", "lifestyle"],
+  description:
+    "Have a question? Get the answer quick by adding this app to your home screen!",
+  screenshots: [
+    {
+      src: "screenshot1.png",
+      sizes: "586x1041",
+      label: "Magic 8 Ball, the legendary fortune teller",
+    },
+    {
+      src: "screenshot2.png",
+      sizes: "586x1041",
+      label: "Sometimes you'll have to ask again",
+    },
+  ],
+}
+
+console.log('mode', process.env.NODE_ENV)
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,85 +91,10 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
-      manifest: {
-        name: "Magic 8 Ball",
-        short_name: "Magic 8 Ball",
-        start_url: "https://8ballwilltellyou.netlify.app/",
-        icons: [
-          {
-            src: "/icon-72x72.png",
-            sizes: "72x72",
-            type: "image/png",
-          },
-          {
-            src: "/icon-96x96.png",
-            sizes: "96x96",
-            type: "image/png",
-          },
-          {
-            src: "/icon-128x128.png",
-            sizes: "128x128",
-            type: "image/png",
-          },
-          {
-            src: "/icon-144x144.png",
-            sizes: "144x144",
-            type: "image/png",
-          },
-          {
-            src: "/icon-152x152.png",
-            sizes: "152x152",
-            type: "image/png",
-          },
-          {
-            src: "/icon-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/icon-384x384.png",
-            sizes: "384x384",
-            type: "image/png",
-          },
-          {
-            src: "/icon-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "/maskable_icon_x192.png",
-            sizes: "196x196",
-            type: "image/png",
-            purpose: "maskable",
-          },
-          {
-            src: "/logo-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any",
-          },
-        ],
-        theme_color: "#242424",
-        background_color: "#242424",
-        display: "standalone",
-        orientation: "portrait-primary",
-        display_override: ["window-controls-overlay", "minimal-ui", "browser"],
-        categories: ["entertainment", "lifestyle"],
-        description:
-          "Have a question? Get the answer quick by adding this app to your home screen!",
-        screenshots: [
-          {
-            src: "screenshot1.png",
-            sizes: "586x1041",
-            label: "Magic 8 Ball, the legendary fortune teller",
-          },
-          {
-            src: "screenshot2.png",
-            sizes: "586x1041",
-            label: "Sometimes you'll have to ask again",
-          },
-        ],
+      devOptions: {
+        enabled: true,
       },
+      manifest: manifest,
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
         runtimeCaching: [

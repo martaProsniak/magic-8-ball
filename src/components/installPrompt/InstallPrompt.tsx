@@ -1,0 +1,3 @@
+interface InstallPromptProps {
+    deferredPrompt: any;
+}

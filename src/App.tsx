@@ -6,6 +6,13 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>();
+  const [clicks, setClicks] = useState<number>(() => Number(localStorage.getItem('clicks')) ?? 0);
+
+  const increaseClicks = () => {
+    setClicks(clicks + 1);
+    localStorage.setItem('clicks', clicks.toString())
+  }
+  
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js')
@@ -31,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Ball />
+      <Ball increaseClicks={increaseClicks} />
       <Footer />
     </div>
   )
