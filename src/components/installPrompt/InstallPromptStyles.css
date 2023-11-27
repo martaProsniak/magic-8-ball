@@ -1,0 +1,85 @@
+.installPrompt {
+    color: var(--light);
+    background-color: var(--dark);
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    top: -25%;
+    transform: translate(-50%, -25%);
+    z-index: 1;
+    font-size: 16px;
+    filter: drop-shadow(0 0 1rem rgba(129, 61, 218, 0.418));
+}
+
+.installPrompt--visible {
+    animation: show 0.5s ease-in-out;
+    top: 0%;
+    transform: translate(-50%, 0%);
+}
+
+.installPrompt--hidden {
+    animation: hide 0.5s ease-in-out;
+    top: -25%;
+    transform: translate(-50%, -25%);
+}
+
+@keyframes show {
+    0% {
+        top: -25%;
+        transform: translate(-50%, -25%);
+    }
+
+    100% {
+        top: 0%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes hide {
+    0% {
+        top: 0%;
+        transform: translate(-50%, 0%);
+    }
+
+    100% {
+        top: -25%;
+        transform: translate(-50%, -25%);
+    }
+}
+
+.promoText {
+    margin: 12px 18px;
+    line-height: 24px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    margin: 16px auto 16px auto;
+    width: fit-content;
+}
+
+button {
+    padding: 8px;
+    font-family: "Montaga", serif;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    width: 80px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, outline 0.1s ease-in-out;
+    border: 1px var(--light) solid;
+}
+
+button:hover {
+    transform: scale(1.1);
+    outline: 3px var(--purple) solid;
+}
+
+button.dark {
+    background-color: var(--dark);
+}
+
+button.install {
+    background-color: var(--purple);
+}
