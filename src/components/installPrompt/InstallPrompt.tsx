@@ -43,11 +43,12 @@ const InstallPrompt = ({
 
   return canShow ? (
     <div className="installPrompt" ref={installPromptRef}>
-      <p>Install App!</p>
-      <div>
-        <button onClick={handleInstall}>Install</button>
-        <button onClick={handleNotNow}>Not now</button>
-        <button onClick={handleDismiss}>Dismiss</button>
+      <p className="promoText">Enjoying the High and Mighty Magic 8 Ball?</p>
+      <p className="promoText">Click install button to add it to your home screen!</p>
+      <div className="buttons">
+        <button className="install" onClick={handleInstall}>Install</button>
+        <button className="dark" onClick={handleNotNow}>Not now</button>
+        <button className="dark" onClick={handleDismiss}>Dismiss</button>
       </div>
     </div>
   ) : null;
