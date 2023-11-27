@@ -40,10 +40,6 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    console.log(deferredPrompt);
-  }, [deferredPrompt]);
-
   window.addEventListener("beforeinstallprompt", function (event) {
     console.log("beforeinstallprompt fired");
     event.preventDefault();
