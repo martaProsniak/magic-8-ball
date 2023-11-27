@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./InstallPromptStyles.css";
+import "./InstallPrompt.css";
 
 interface InstallPromptProps {
   deferredPrompt: any;
