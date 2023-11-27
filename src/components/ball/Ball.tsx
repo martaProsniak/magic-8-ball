@@ -28,7 +28,6 @@ const Ball = ({increaseClicks}: BallProps) => {
 
     const onQuestionChange = () => {
         if (!answer) return;
-        increaseClicks();
         answerRef.current?.classList.remove('fadeIn');
         answerRef.current?.classList.add('fadeOut');
         setTimeout(() => {

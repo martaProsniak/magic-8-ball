@@ -13,11 +13,16 @@ function App() {
   const [promptDismissed, setPromptDismissed] = useState<boolean>(
     () => !!localStorage.getItem("promptDismissed")
   );
+  const [canShowInstallPrompt, setCanShowInstallPrompt] = useState(false);
 
   const increaseClicks = () => {
     setClicks(clicks + 1);
-    localStorage.setItem("clicks", clicks.toString());
   };
+
+  useEffect(() => {
+       localStorage.setItem("clicks", clicks.toString());
+       setCanShowInstallPrompt(deferredPrompt && !promptDismissed && clicks > 3)
+  }, [clicks])
 
   const dismissPrompt = () => {
     localStorage.setItem("promptDismissed", "true");
@@ -48,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <InstallPrompt deferredPrompt={deferredPrompt} dismissPrompt={dismissPrompt} />
+      <InstallPrompt deferredPrompt={deferredPrompt} dismissPrompt={dismissPrompt} canShow={canShowInstallPrompt}/>
       <Header />
       <Ball increaseClicks={increaseClicks} />
       <Footer />
