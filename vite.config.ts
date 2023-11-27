@@ -73,11 +73,13 @@ const manifest: Partial<ManifestOptions> = {
       src: "screenshot1.png",
       sizes: "1080x1920",
       label: "Magic 8 Ball, the legendary fortune teller",
+      type: "image/png"
     },
     {
       src: "screenshot2.png",
       sizes: "1080x1920",
       label: "Sometimes you'll have to ask again",
+      type: "image/png"
     },
   ],
 }
