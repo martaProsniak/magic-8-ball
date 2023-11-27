@@ -7,11 +7,13 @@
     left: 50%;
     top: -25%;
     transform: translate(-50%, -25%);
+    z-index: 1;
+    font-size: 20px;
 }
 
 .installPrompt--visible {
     animation: show 1s ease-in-out;
-    top: -50%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -28,19 +30,19 @@
     }
 
     80% {
-        top: -60%;
+        top: 60%;
         transform: translate(-50%, -60%);
     }
 
     100% {
-        top: -50%;
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 }
 
 @keyframes hide {
     0% {
-        top: -50%;
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 
